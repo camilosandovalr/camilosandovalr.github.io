@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntegradorPPT</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiko">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gafata">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Header.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/png" href="assets/img/logoTQ.ico" />
+</head>
+
+<body>
+    <nav class="navbar navbar-default custom-header">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="#" style="background-image:url(&quot;assets/img/logoTQ.png&quot;);width:75px;height:75px;"> </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown open">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" href="#"> <span class="caret"></span><i class="icon ion-android-person"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li role="presentation" style="width:180px;"><a href="#">Nombre de usuario</a></li>
+                            <li role="presentation"><a href="#">Opción 1</a></li>
+                            <li role="presentation" class="active"><a href="#" style="color:rgb(160,196,239) !important;"><i class="icon ion-log-out icon-logut"></i> Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 side-bar-col"><i class="icon ion-grid icon-side-bar"></i>
+                <h3 class="visible-md-inline-block visible-lg-inline-block">Armar estructura</h3>
+                <hr>
+                <input class="visible-md-block visible-lg-block inputs-sidebar" type="text" placeholder="Nombre de la diapositiva"><i class="icon ion-android-color-palette visible-md-inline-block visible-lg-inline-block icon-side-bar"></i>
+                <h4 class="visible-md-inline-block visible-lg-inline-block subtitles-sidebar">Estilo de diapositiva</h4>
+                <form class="form-style-slide">
+                    <div class="radio checkbox-style-text">
+                        <label class="checkbox-style-text">
+                            <input type="radio" name="infinite" id="title-check" value="1">Título</label>
+                    </div>
+                    <div class="radio">
+                        <label class="checkbox-style-text">
+                            <input type="radio" name="infinite" id="subtitle-check" value="2">Subtítulo</label>
+                    </div>
+                    <div class="radio">
+                        <label class="checkbox-style-text">
+                            <input type="radio" name="infinite" id="content-title" value="3">Contenido</label>
+                    </div>
+                    <div class="radio">
+                        <label class="checkbox-style-text" value="4">
+                            <input type="radio" name="infinite" value="4">Blanco</label>
+                    </div>
+                </form>
+                <div id="files-sidebar" style="display: none"><i class="icon ion-document-text visible-md-inline-block visible-lg-inline-block icon-side-bar"></i>
+                    <h4 class="visible-md-inline-block visible-lg-inline-block subtitles-sidebar">Archivos </h4>
+                    <select class="visible-md-block visible-lg-block inputs-sidebar">
+                        <optgroup label="Archivos">
+                            <option value="12" selected="">Archivo 1</option>
+                            <option value="13">Archivo 2</option>
+                            <option value="14">Archivo 3</option>
+                        </optgroup>
+                    </select>
+                    <div class="position-input">
+                        <div class="input-group search-bar">
+                            <div class="input-group-addon hidden-xs hidden-sm hidden-md hidden-lg"></div>
+                            <input class="form-control" type="text" placeholder="Nombre diapositiva">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default btn-search-bar" type="button"> <i class="icon ion-search icon-search-bar-side"></i></button>
+                            </div>
+                        </div>
+                        <div class="title-list-slide">Lista de diapositivas</div>
+                        <ol id="selectable">
+                            <li class="ui-widget-content">Item 1</li>
+                            <li class="ui-widget-content">Item 2</li>
+                            <li class="ui-widget-content">Item 3</li>
+                            <li class="ui-widget-content">Item 4</li>
+                            <li class="ui-widget-content">Item 5</li>
+                            <li class="ui-widget-content">Item 6</li>
+                            <li class="ui-widget-content">Item 7</li>
+                        </ol>
+                    </div>
+                </div>
+                <p class="visible-md-inline-block visible-lg-inline-block">Posición: </p>
+                <input class="visible-md-inline visible-lg-inline inputs-sidebar-number" type="number">
+                <div id="properties-div" style="display: none"><i class="icon ion-document-text visible-md-inline-block visible-lg-inline-block icon-side-bar"></i>
+                    <h4 class="visible-md-inline-block visible-lg-inline-block subtitles-sidebar">Propiedades </h4>
+                    <div id="title-slide" style="display: none">
+                        <input class="visible-md-block visible-lg-block inputs-sidebar" type="text" name="titulo" placeholder="Título">
+                    </div>
+                    <div id="subtitle-slide" style="display: none">
+                        <input class="visible-md-block visible-lg-block inputs-sidebar" type="text" name="subtitulo" placeholder="Subtítulo" id="subtitle-input">
+                    </div>
+                </div>
+                <hr>
+                <div class="checkbox visible-md-inline-block visible-lg-inline-block">
+                    <label class="radio-label-sidebar">
+                        <input type="checkbox" id="hide-check">Oculto</label>
+                </div>
+                <div class="checkbox visible-md-inline-block visible-lg-inline-block">
+                    <div id="white-check-sidebar" style="display: none !important">
+                    <label class="visible-md-inline-block visible-lg-inline-block radio-label-sidebar">
+                        <input type="checkbox" id="white-check">Fondo blanco</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block visible-md-block visible-lg-block btn-add" type="button" id="btn-add"><i class="icon ion-android-add-circle icon-btn"></i>Agregar</button>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="visible-md-inline-block visible-lg-inline-block title-main"><i class="icon ion-android-arrow-dropright icon-side-bar"></i>Resultado de la estructura</h2>
+                        <hr class="hr-title">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <p class="p-info-main"><i class="icon ion-ios-information"></i>Número de diapositivas agregadas: 0</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4"></div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="input-group">
+                            <div class="input-group-addon hidden-xs hidden-sm hidden-md hidden-lg"></div>
+                            <input class="form-control" type="text">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default btn-search-bar" type="button"> <i class="icon ion-search icon-search-bar-side"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="card-list">
+                            <ul class="list-group" id="sortable">
+                                <li class="list-group-item ui-state-default main-list-ppt" style="background:#e0e0e0;">
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-list-btn-drag col-list" style="width:40px;"><i class="material-icons drag-icon">drag_handle</i></div>
+                                        <div class="col-lg-1 col-md-1 number-list col-list">
+                                            <p class="number-p-list">1 </p>
+                                        </div>
+                                        <div class="col-lg-7 col-md-7 col-list">
+                                            <div class="checkbox checkbox-text-list">
+                                                <label class="name-slide-check">
+                                                    <input type="checkbox" class="checkbox-list">Nombre de la presentación</label>
+                                            </div>
+                                            <p class="p-list">Diapositivas </p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-options-list col-list">
+                                            <div class="visible-md-block visible-lg-block">
+                                                <button class="btn btn-default btn-circle-options" type="button"><i class="icon ion-android-delete icon-circle-options"></i></button>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Oculto</label>
+                                                </div>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Fondo blanco</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item main-list-ppt" style="background:#e0e0e0;">
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-list-btn-drag col-list" style="width:40px;"><i class="material-icons drag-icon">drag_handle</i></div>
+                                        <div class="col-lg-1 col-md-1 number-list col-list">
+                                            <p class="number-p-list">2 </p>
+                                        </div>
+                                        <div class="col-lg-7 col-md-7 col-list">
+                                            <div class="checkbox checkbox-text-list">
+                                                <label class="name-slide-check">
+                                                    <input type="checkbox" class="checkbox-list">Nombre de la presentación</label>
+                                            </div>
+                                            <p class="p-list">Diapositivas </p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-options-list col-list">
+                                            <div class="visible-md-block visible-lg-block">
+                                                <button class="btn btn-default btn-circle-options" type="button"><i class="icon ion-android-delete icon-circle-options"></i></button>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Oculto</label>
+                                                </div>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Fondo blanco</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item main-list-ppt" style="background:#e0e0e0;">
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-list-btn-drag col-list" style="width:40px;"><i class="material-icons drag-icon">drag_handle</i></div>
+                                        <div class="col-lg-1 col-md-1 number-list col-list">
+                                            <p class="number-p-list">3 </p>
+                                        </div>
+                                        <div class="col-lg-7 col-md-7 col-list">
+                                            <div class="checkbox checkbox-text-list">
+                                                <label class="name-slide-check">
+                                                    <input type="checkbox" class="checkbox-list">Nombre de la presentación</label>
+                                            </div>
+                                            <p class="p-list">Diapositivas </p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-options-list col-list">
+                                            <div class="visible-md-block visible-lg-block">
+                                                <button class="btn btn-default btn-circle-options" type="button"><i class="icon ion-android-delete icon-circle-options"></i></button>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Oculto</label>
+                                                </div>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Fondo blanco</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item main-list-ppt" style="background:#e0e0e0;">
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-list-btn-drag col-list" style="width:40px;"><i class="material-icons drag-icon">drag_handle</i></div>
+                                        <div class="col-lg-1 col-md-1 number-list col-list">
+                                            <p class="number-p-list">4 </p>
+                                        </div>
+                                        <div class="col-lg-7 col-md-7 col-list">
+                                            <div class="checkbox checkbox-text-list">
+                                                <label class="name-slide-check">
+                                                    <input type="checkbox" class="checkbox-list">Nombre de la presentación</label>
+                                            </div>
+                                            <p class="p-list">Diapositivas </p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-options-list col-list">
+                                            <div class="visible-md-block visible-lg-block">
+                                                <button class="btn btn-default btn-circle-options" type="button"><i class="icon ion-android-delete icon-circle-options"></i></button>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Oculto</label>
+                                                </div>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Fondo blanco</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item main-list-ppt" style="background:#e0e0e0;">
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-list-btn-drag col-list" style="width:40px;"><i class="material-icons drag-icon">drag_handle</i></div>
+                                        <div class="col-lg-1 col-md-1 number-list col-list">
+                                            <p class="number-p-list">5 </p>
+                                        </div>
+                                        <div class="col-lg-7 col-md-7 col-list">
+                                            <div class="checkbox checkbox-text-list">
+                                                <label class="name-slide-check">
+                                                    <input type="checkbox" class="checkbox-list">Nombre de la presentación</label>
+                                            </div>
+                                            <p class="p-list">Diapositivas </p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-options-list col-list">
+                                            <div class="visible-md-block visible-lg-block">
+                                                <button class="btn btn-default btn-circle-options" type="button"><i class="icon ion-android-delete icon-circle-options"></i></button>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Oculto</label>
+                                                </div>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Fondo blanco</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item main-list-ppt" style="background:#e0e0e0;">
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-list-btn-drag col-list" style="width:40px;"><i class="material-icons drag-icon">drag_handle</i></div>
+                                        <div class="col-lg-1 col-md-1 number-list col-list">
+                                            <p class="number-p-list">6 </p>
+                                        </div>
+                                        <div class="col-lg-7 col-md-7 col-list">
+                                            <div class="checkbox checkbox-text-list">
+                                                <label class="name-slide-check">
+                                                    <input type="checkbox" class="checkbox-list">Nombre de la presentación</label>
+                                            </div>
+                                            <p class="p-list">Diapositivas </p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-options-list col-list">
+                                            <div class="visible-md-block visible-lg-block">
+                                                <button class="btn btn-default btn-circle-options" type="button"><i class="icon ion-android-delete icon-circle-options"></i></button>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Oculto</label>
+                                                </div>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Fondo blanco</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item main-list-ppt" style="background:#e0e0e0;">
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 col-list-btn-drag col-list" style="width:40px;"><i class="material-icons drag-icon">drag_handle</i></div>
+                                        <div class="col-lg-1 col-md-1 number-list col-list">
+                                            <p class="number-p-list">7 </p>
+                                        </div>
+                                        <div class="col-lg-7 col-md-7 col-list">
+                                            <div class="checkbox checkbox-text-list">
+                                                <label class="name-slide-check">
+                                                    <input type="checkbox" class="checkbox-list">Nombre de la presentación</label>
+                                            </div>
+                                            <p class="p-list">Diapositivas </p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-options-list col-list">
+                                            <div class="visible-md-block visible-lg-block">
+                                                <button class="btn btn-default btn-circle-options" type="button"><i class="icon ion-android-delete icon-circle-options"></i></button>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Oculto</label>
+                                                </div>
+                                            </div>
+                                            <div class="visible-md-block visible-lg-block">
+                                                <div class="checkbox">
+                                                    <label class="label-check-list">
+                                                        <input type="checkbox">Fondo blanco</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-btn-delete">
+                        <button class="btn btn-danger btn-delete" type="button" data-target="#modalDelete" data-toggle="modal"><i class="icon ion-android-delete icon-btn"></i> Eliminar varias</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="modal fade" role="dialog" tabindex="-1" id="modalDelete">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <h4 class="modal-title"> <img src="assets/img/logoTQ.png" width="50px"></h4></div>
+                            <div class="modal-body">
+                                <p class="message-modal">¿Estas seguro de eliminar las diapositivas seleccionadas?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary btn-modal-yes" type="button" data-dismiss="modal">SI </button>
+                                <button class="btn btn-default btn-modal-no" type="button">NO </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Right-Sidebar.js"></script>
+    <script src="assets/js/Sidebar-Menu.js"></script>
+    <script src="assets/js/Table-with-search.js"></script>
+    <script src="assets/js/functions.js"></script>
+</body>
+
+</html>
